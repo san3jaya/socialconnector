@@ -1,0 +1,56 @@
+{
+    "name": "san3jaya/socialconnector",
+    "description": "This is a package to connect social APIs. Such as facebook instagram and etc..",
+    "keywords": [
+        "san3jaya",
+        "socialconnector"
+    ],
+    "homepage": "https://github.com/san3jaya/socialconnector",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sanjaya De Silva",
+            "email": "san3jaya@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0|^9.0",
+        "laravel/socialite": "^5.5",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "San3jaya\\SocialConnector\\": "SocialConnector"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "San3jaya\\SocialConnector\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "San3jaya\\SocialConnector\\SocialConnectorServiceProvider"
+            ],
+            "aliases": {
+                "FacebookGraphConnector": "San3jaya\\SocialConnector\\SocialConnectorFacade"
+            }
+        }
+    }
+}
